@@ -6,6 +6,8 @@ import Login from './components/Login/login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import SelecionarCliente from './components/SelecionarCliente/SelecionarCliente';
 import Dashboard from './components/dashboard/Dashboard';
+import ResultadoLiqCentrosCustos from './components/ResultadoLiqCentrosCustos/ResultadoLiqCentrosCustos';
+
 
 const AppRoutes = () => {
   return (
@@ -13,8 +15,8 @@ const AppRoutes = () => {
       <Route path="/" element={<Login />} />
       <Route path="/esqueci-senha" element={<ForgotPassword />} />
       <Route path="/selecionar-cliente" element={<SelecionarCliente />} />
-      
-     <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/resultado" element={<ResultadoLiqCentrosCustos />} />
     </Routes>
   );
 };

@@ -1,4 +1,5 @@
 import { Menu, Avatar } from 'antd';
+import { useNavigate } from 'react-router-dom';
 import {
   BarChartOutlined,
   FileOutlined,
@@ -12,6 +13,11 @@ import {
 const { SubMenu } = Menu;
 
 const MenuList = ({ darkTheme, collapsed }) => {
+  const navigate = useNavigate();
+
+     const handleMenuClick = ({ key }) => {
+    navigate(`/${key}`);
+  };
   return (
     <>
       <div style={{ position: 'relative', width: 'fit-content', margin: '10px auto' }}>
@@ -53,6 +59,7 @@ const MenuList = ({ darkTheme, collapsed }) => {
         theme={darkTheme ? 'dark' : 'light'}
         mode="inline"
         className="menu-bar"
+        onClick={handleMenuClick} 
       >
         <p className="menu-title">Indicadores</p>
         <Menu.Item key="dashboard" icon={<AppstoreOutlined />}>
