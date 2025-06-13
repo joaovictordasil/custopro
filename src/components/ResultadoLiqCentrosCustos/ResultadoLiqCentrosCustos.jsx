@@ -94,10 +94,16 @@ const ResultadoLiqCentrosCustos = () => {
           }}
         >
           <Button
-            type="text"
-            icon={<MenuFoldOutlined style={{ color: darkTheme ? '#fff' : '#000' }} />}
-            onClick={() => setCollapsed(!collapsed)}
-          />
+  type="text"
+  icon={
+    collapsed ? (
+      <MenuUnfoldOutlined style={{ color: darkTheme ? '#fff' : '#000' }} />
+    ) : (
+      <MenuFoldOutlined style={{ color: darkTheme ? '#fff' : '#000' }} />
+    )
+  }
+  onClick={() => setCollapsed(!collapsed)}
+/>
           <ToggleThemeButton darkTheme={darkTheme} toggleTheme={toggleTheme} />
         </Header>
 
