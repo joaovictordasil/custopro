@@ -8,7 +8,6 @@ import {
   MenuFoldOutlined,
   RiseOutlined,
 } from '@ant-design/icons';
-
 import IndicadorCard from './IndicadorCard';
 import Logo from '../Logo';
 import MenuList from '../MenuList';
@@ -19,23 +18,23 @@ const { Header, Sider, Content } = Layout;
 
 const todosOsDados = [
   { titulo: 'Acessórios Para Cães', valor: '5.00' },
-  { titulo: 'Anestesia', valor: '10.00' },
+  { titulo: 'Anestesia', valor: '-10.00' },
   { titulo: 'Anestesia E Sedação', valor: '15.00' },
-  { titulo: 'Aplicação', valor: '20.00' },
+  { titulo: 'Aplicação', valor: '-20.00' },
   { titulo: 'Aplicações De Internação', valor: '25.00' },
-  { titulo: 'Banho E Tosa', valor: '30.00' },
+  { titulo: 'Banho E Tosa', valor: '-30.00' },
   { titulo: 'Cirurgia', valor: '35.00' },
-  { titulo: 'Clínica', valor: '40.00' },
+  { titulo: 'Clínica', valor: '-40.00' },
   { titulo: 'Consulta', valor: '45.00' },
-  { titulo: 'Consulta Especialista', valor: '50.00' },
+  { titulo: 'Consulta Especialista', valor: '-50.00' },
   { titulo: 'Diárias De Internação', valor: '55.00' },
-  { titulo: 'Ecodopplercardiograma', valor: '60.00' },
+  { titulo: 'Ecodopplercardiograma', valor: '-60.00' },
   { titulo: 'Eletrocardiograma', valor: '65.00' },
-  { titulo: 'Estética Animal', valor: '70.00' },
+  { titulo: 'Estética Animal', valor: '-70.00' },
   { titulo: 'Exame Laboratoriais Externos', valor: '75.00' },
-  { titulo: 'Exame Laboratoriais Internos', valor: '80.00' },
+  { titulo: 'Exame Laboratoriais Internos', valor: '-80.00' },
   { titulo: 'Farmácia', valor: '85.00' },
-  { titulo: 'Gastos Plano De Saúde', valor: '90.00' },
+  { titulo: 'Gastos Plano De Saúde', valor: '-90.00' },
   { titulo: 'Internação', valor: '95.00' },
   { titulo: 'Laboratório', valor: '100.00' },
   { titulo: 'Microchip', valor: '-100.00' },

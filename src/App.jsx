@@ -1,6 +1,7 @@
 import './App.css';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import AppRoutes from './routes';
+import { EmpresasProvider } from './components/contexts/EmpresasContext'; // certifique-se do caminho correto
 
 function AppWrapper() {
   const location = useLocation();
@@ -23,9 +24,11 @@ function AppWrapper() {
 
 function App() {
   return (
-    <Router>
-      <AppWrapper />
-    </Router>
+    <EmpresasProvider>
+      <Router>
+        <AppWrapper />
+      </Router>
+    </EmpresasProvider>
   );
 }
 
