@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import AppRoutes from './routes';
-import { EmpresasProvider } from './components/contexts/EmpresasContext'; // certifique-se do caminho correto
-
+import { EmpresasProvider } from './contexts/EmpresasContext'; 
+;
 function AppWrapper() {
   const location = useLocation();
 

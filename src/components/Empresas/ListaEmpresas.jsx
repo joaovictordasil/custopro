@@ -8,6 +8,7 @@ import {
   Table,
   Space,
   Popconfirm,
+  Input,
 } from 'antd';
 import {
   PlusOutlined,
@@ -21,7 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import Logo from '../Logo';
 import MenuList from '../MenuList';
 import ToggleThemeButton from '../ToggleThemeButton';
-import { useEmpresas } from '../contexts/EmpresasContext';
+import { useEmpresas } from '../../contexts/EmpresasContext';
 
 const { Title } = Typography;
 const { Header, Sider, Content } = Layout;
@@ -32,8 +33,15 @@ export default function ListaEmpresas() {
 
   const [collapsed, setCollapsed] = useState(false);
   const [darkTheme, setDarkTheme] = useState(true);
+  const [busca, setBusca] = useState('');
 
   const toggleTheme = () => setDarkTheme(!darkTheme);
+
+  const empresasFiltradas = empresas.filter((empresa) =>
+    empresa.razao_social?.toLowerCase().includes(busca.toLowerCase()) ||
+    empresa.cnpj?.includes(busca) ||
+    empresa.marca?.toLowerCase().includes(busca.toLowerCase())
+  );
 
   const columns = [
     { title: 'Marca', dataIndex: 'marca', key: 'marca' },
@@ -49,8 +57,9 @@ export default function ListaEmpresas() {
         <Space>
           <Button
             icon={<EyeOutlined />}
-            onClick={() => navigate(`/empresas/${record.id || record.key}`)}
+            onClick={() => navigate(`/empresas/visualizar/${record.id || record.key}`)}
           />
+
           <Button
             icon={<EditOutlined />}
             onClick={() => navigate(`/empresas/editar/${record.id || record.key}`)}
@@ -119,7 +128,7 @@ export default function ListaEmpresas() {
         <Content style={{ margin: 24 }}>
           <Row justify="space-between" align="middle" style={{ marginBottom: 50 }}>
             <Col>
-              <Title level={3}>Empresas Cadastradas</Title>
+              <Title level={2}>Empresas Cadastradas</Title>
             </Col>
             <Col>
               <Button
@@ -132,8 +141,15 @@ export default function ListaEmpresas() {
             </Col>
           </Row>
 
+          <Input.Search
+            placeholder="Buscar por razão social, CNPJ ou marca"
+            allowClear
+            onChange={(e) => setBusca(e.target.value)}
+            style={{ maxWidth: 400, marginBottom: 20 }}
+          />
+
           <Table
-            dataSource={empresas.map((e, i) => ({ ...e, key: e.id || i }))}
+            dataSource={empresasFiltradas.map((e, i) => ({ ...e, key: e.id || i }))}
             columns={columns}
             pagination={{ pageSize: 5 }}
             bordered
