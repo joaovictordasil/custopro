@@ -70,7 +70,7 @@ function Home() {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      {/* Sidebar fixo */}
+      
       <Sider
         collapsed={collapsed}
         collapsible
@@ -92,7 +92,7 @@ function Home() {
         <MenuList darkTheme={darkTheme} />
       </Sider>
 
-      {/* Conteúdo */}
+      
       <Layout style={{ marginLeft: collapsed ? 0 : 200, transition: 'margin-left 0.2s ease' }}>
         <Header
           style={{

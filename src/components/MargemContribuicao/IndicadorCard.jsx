@@ -11,8 +11,8 @@ const IndicadorCard = ({ titulo, valor }) => {
       : 'linear-gradient(to right, #00c896, #00aa7f)',
     color: '#fff',
     borderRadius: 10,
-    width: 260,               // Tamanho fixo da largura
-    height: 150,              // Tamanho fixo da altura
+    width: 260,               
+    height: 150,              
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'center',

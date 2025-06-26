@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { Routes, Route, Router } from 'react-router-dom';
 import Login from './components/Login/login';
 import ForgotPassword from './components/ForgotPassword/ForgotPassword';
 import SelecionarCliente from './components/SelecionarCliente/SelecionarCliente';
@@ -9,6 +9,9 @@ import MargemContribuicao from './components/MargemContribuicao/MargemContribuic
 import ListaEmpresas from './components/Empresas/ListaEmpresas';
 import VisualizarEmpresa from './components/Empresas/VisualizarEmpresa';
 import NovaOuEditarEmpresa from './components/Empresas/NovaOuEditarEmpresa';
+import GruposCentroCusto from './components/grupos-centro-custo/grupo';
+import NovoGrupoCentroCusto from "./components/grupos-centro-custo/novo";
+import EditarGrupoCentroCusto from './components/grupos-centro-custo/EditarGrupoCentroCusto';
 
 const AppRoutes = () => {
   return (
@@ -23,6 +26,9 @@ const AppRoutes = () => {
       <Route path="/empresas/nova" element={<NovaOuEditarEmpresa />} />
       <Route path="/empresas/editar/:id" element={<NovaOuEditarEmpresa />} />
       <Route path="/empresas/visualizar/:id" element={<VisualizarEmpresa />} />
+      <Route path="/grupos-centro-custo" element={<GruposCentroCusto/>}/>
+      <Route path="/grupos-centro-custo/novo" element={<NovoGrupoCentroCusto />} />
+      <Route path="/grupos-centro-custo/editar/:key" element={<EditarGrupoCentroCusto />} />
     </Routes>
   );
 };
