@@ -45,6 +45,7 @@ const NovoGrupoCentroCusto = () => {
         collapsedWidth={0}
         trigger={null}
         theme={darkTheme ? 'dark' : 'light'}
+        width={260}
         style={{
           position: 'fixed',
           top: 0,
@@ -58,7 +59,7 @@ const NovoGrupoCentroCusto = () => {
         <MenuList darkTheme={darkTheme} />
       </Sider>
 
-      <Layout style={{ marginLeft: collapsed ? 0 : 200, transition: 'margin-left 0.2s ease' }}>
+      <Layout style={{ marginLeft: collapsed ? 0 : 260, transition: 'margin-left 0.2s ease' }}>
         <Header
           style={{
             padding: '0 16px',

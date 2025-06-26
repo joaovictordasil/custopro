@@ -70,7 +70,6 @@ function Home() {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      
       <Sider
         collapsed={collapsed}
         collapsible
@@ -78,7 +77,7 @@ function Home() {
         trigger={null}
         theme={darkTheme ? 'dark' : 'light'}
         className="sidebar"
-        width={200}
+        width={260}
         style={{
           position: 'fixed',
           top: 0,
@@ -92,8 +91,15 @@ function Home() {
         <MenuList darkTheme={darkTheme} />
       </Sider>
 
-      
-      <Layout style={{ marginLeft: collapsed ? 0 : 200, transition: 'margin-left 0.2s ease' }}>
+      <Layout
+        style={{
+          marginLeft: collapsed ? 0 : 260,
+          transition: 'margin-left 0.2s ease',
+          display: 'flex',
+          flexDirection: 'column',
+          flex: 1,
+        }}
+      >
         <Header
           style={{
             padding: '0 16px',
@@ -153,7 +159,15 @@ function Home() {
           </div>
         </Header>
 
-        <Content style={{ margin: 24, overflowY: 'auto' }}>
+        <Content
+          style={{
+            margin: 24,
+            minHeight: '100vh',
+            overflowY: 'auto',
+            background: ColorBgContainer,
+            flex: 1,
+          }}
+        >
           <h1 className="dashboard-title" style={{ color: darkTheme ? '#575555' : '#000' }}>
             Olá, bem-vindo de volta!
           </h1>
