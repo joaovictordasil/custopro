@@ -3,9 +3,12 @@ import { BrowserRouter as Router, useLocation } from 'react-router-dom';
 import AppRoutes from './routes';
 import { EmpresasProvider } from './contexts/EmpresasContext'; 
 import { GruposProvider } from './contexts/GruposCentroCustoContext'; 
+import { LoadingProvider, useLoading } from './contexts/LoadingContext';
+import LoadingOverlay from './components/LoadingOverlay';
 
 function AppWrapper() {
   const location = useLocation();
+  const { loading } = useLoading();
 
   const estiloPorRota = {
     '/': 'background-login',
@@ -18,6 +21,7 @@ function AppWrapper() {
 
   return (
     <div className={isTelaComEstilo ? `App ${backgroundClass}` : 'App'}>
+      {loading && <LoadingOverlay />}
       <AppRoutes />
     </div>
   );
@@ -27,9 +31,11 @@ function App() {
   return (
     <EmpresasProvider>
       <GruposProvider> 
-        <Router>
-          <AppWrapper />
-        </Router>
+        <LoadingProvider> 
+          <Router>
+            <AppWrapper />
+          </Router>
+        </LoadingProvider>
       </GruposProvider>
     </EmpresasProvider>
   );

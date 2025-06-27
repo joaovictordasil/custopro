@@ -1,0 +1,10 @@
+
+.custom-spinner .ant-spin-dot i {
+  background-color: #d0b908 !important; 
+}
+
+
+.custom-spinner .ant-spin-text {
+  color: #0c0c0c !important;
+  font-weight: bold;
+}
