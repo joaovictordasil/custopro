@@ -14,6 +14,10 @@ import NovaOuEditarEmpresa from './components/Empresas/NovaOuEditarEmpresa';
 import GruposCentroCusto from './components/grupos-centro-custo/grupo';
 import NovoGrupoCentroCusto from "./components/grupos-centro-custo/novo";
 import EditarGrupoCentroCusto from './components/grupos-centro-custo/EditarGrupoCentroCusto';
+import ListaSubgrupos from './components/Subgrupos/ListaSubgrupos';
+import NovoSubgrupo from './components/Subgrupos/NovoSubgrupo';
+
+
 
 const AppRoutes = () => {
   const location = useLocation();
@@ -40,6 +44,9 @@ const AppRoutes = () => {
       <Route path="/grupos-centro-custo" element={<GruposCentroCusto />} />
       <Route path="/grupos-centro-custo/novo" element={<NovoGrupoCentroCusto />} />
       <Route path="/grupos-centro-custo/editar/:key" element={<EditarGrupoCentroCusto />} />
+      <Route path="/subgrupos-centro-custo" element={<ListaSubgrupos />} />
+      <Route path="/subgrupos-centro-custo/novo" element={<NovoSubgrupo />} />
+
     </Routes>
   );
 };

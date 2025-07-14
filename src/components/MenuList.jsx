@@ -47,7 +47,7 @@ const MenuList = ({ darkTheme, collapsed }) => {
         )}
       </div>
 
-      {/* Menu */}
+      
       <div
         className={`menu-scroll ${darkTheme ? 'dark' : 'light'}`}
         style={{ flex: 1, overflowY: 'auto' }}
@@ -82,7 +82,7 @@ const MenuList = ({ darkTheme, collapsed }) => {
               <Menu.Item key="empresas">Empresas</Menu.Item>
               <Menu.Divider className={darkTheme ? 'divider-dark' : 'divider-light'} />
               <Menu.Item key="grupos-centro-custo">Grupo Centro de Custo</Menu.Item> 
-              <Menu.Item key="subgrupo-centro">Subgrupos Centro de Custo</Menu.Item>
+              <Menu.Item key="subgrupos-centro-custo">Subgrupos Centro de Custo</Menu.Item>
               <Menu.Item key="centro-custo">Centros de Custo</Menu.Item>
               <Menu.Divider className={darkTheme ? 'divider-dark' : 'divider-light'} />
               <Menu.Item key="grupo-naturezas">Grupos de Naturezas</Menu.Item>

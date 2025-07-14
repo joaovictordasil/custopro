@@ -5,6 +5,8 @@ import { EmpresasProvider } from './contexts/EmpresasContext';
 import { GruposProvider } from './contexts/GruposCentroCustoContext'; 
 import { LoadingProvider, useLoading } from './contexts/LoadingContext';
 import LoadingOverlay from './components/LoadingOverlay';
+import { SubgruposProvider } from './contexts/SubgruposContext';
+
 
 function AppWrapper() {
   const location = useLocation();
@@ -29,13 +31,15 @@ function AppWrapper() {
 
 function App() {
   return (
-    <EmpresasProvider>
-      <GruposProvider> 
-        <LoadingProvider> 
-          <Router>
-            <AppWrapper />
-          </Router>
-        </LoadingProvider>
+  <EmpresasProvider>
+      <GruposProvider>
+        <SubgruposProvider> {/* <-- ENVOLVE AQUI */}
+          <LoadingProvider>
+            <Router>
+              <AppWrapper />
+            </Router>
+          </LoadingProvider>
+        </SubgruposProvider>
       </GruposProvider>
     </EmpresasProvider>
   );
