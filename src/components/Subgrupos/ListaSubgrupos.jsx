@@ -11,6 +11,7 @@ import {
   Avatar,
   Dropdown,
   Menu,
+  theme,
 } from 'antd';
 import {
   EditOutlined,
@@ -27,14 +28,21 @@ import Logo from '../Logo';
 import MenuList from '../MenuList';
 import ToggleThemeButton from '../ToggleThemeButton';
 
+
+
 const { Header, Sider, Content } = Layout;
 const { Title } = Typography;
 const { Option } = Select;
 
+
 const ListaSubgrupos = () => {
   const navigate = useNavigate();
   const { subgrupos, removerSubgrupo } = useContext(SubgruposContext);
-
+  
+  const {
+    token:{colorText},
+  } =theme.useToken();
+  
   const [collapsed, setCollapsed] = useState(false);
   const [darkTheme, setDarkTheme] = useState(true);
   const [searchText, setSearchText] = useState('');
@@ -176,14 +184,16 @@ const ListaSubgrupos = () => {
           style={{
             margin: 24,
             padding: 24,
-            background: darkTheme ? '#1f1f1f' : '#fff',
             minHeight: '100vh',
             overflowY: 'auto',
             flex: 1,
           }}
         >
+          
+        
+
           <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
-            <Title level={3} style={{ color: darkTheme ? '#fff' : '#000' }}>
+            <Title level={2} style={{ color: colorText, fontWeight: 500 }}>
               SUBGRUPOS DE CENTRO DE CUSTO
             </Title>
             <Button
@@ -194,8 +204,10 @@ const ListaSubgrupos = () => {
               Novo
             </Button>
           </div>
+            
 
-          <div style={{ marginBottom: 16, display: 'flex', gap: 8 }}>
+
+          <div style={{ marginBottom: 18, display: 'flex', gap: 16 }}>
             <Select defaultValue={100} style={{ width: 120 }}>
               <Option value={10}>10</Option>
               <Option value={20}>20</Option>
@@ -204,7 +216,7 @@ const ListaSubgrupos = () => {
             <Input.Search
               placeholder="Pesquisar"
               onChange={(e) => setSearchText(e.target.value)}
-              style={{ width: 200 }}
+              style={{ width: 1000 }}
             />
           </div>
 
